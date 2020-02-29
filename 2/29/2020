@@ -1,0 +1,68 @@
+/*Author:Nicky_Yue
+ *date:2/29/2020
+ *function:solving linear equation in two unknowns
+ *e-mail:yuntianqinghe@qq.com
+ */
+
+#include<iostream>
+
+#include<cmath>
+
+using namespace std;
+
+int main()
+{
+    double a,b,c;//定义了方程的系数a,b,c
+    double delta;//定义了判别式
+    double x,x1,x2;//定义了方程的根
+    cout<<"如果不想执行程序，依次将a,b,c输入为0即可。"<<endl;
+    while(1)
+    {
+        cout<<"Please input a,b,c in turns"<<endl;
+        cin>>a>>b>>c;
+        if(a==0&&b==0&&c==0)
+        {
+            break;
+        }
+        if(a==0)
+        {
+            if(b==0)
+            {
+                cout<<"您输入的三个系数无法构成方程"<<endl;
+                continue;
+            }
+            else
+            {
+                x=-c/b;
+                cout<<"您输入的方程只有一个根 x="<<x<<endl;
+                continue;
+            }
+        }
+        else
+        {
+            delta=b*b-4*a*c;
+            if(delta>0)
+            {
+                x1=(-b+sqrt(delta))/(2*a);
+                x2=(-b-sqrt(delta))/(2*a);
+                cout<<"您输入的方程有两个实根，分别为x1="<<x1<<" "<<"x2="<<x2<<endl;
+                continue;
+            }
+            if(delta==0)
+            {
+                x1=x2=(-b+sqrt(delta))/(2*a);
+                cout<<"您输入的方程有一个实根，为x="<<x1<<endl;
+                continue;
+            }
+            if(delta<0)
+            {
+                delta=sqrt(-delta);
+                x1=-b/2/a;
+                x2=delta/2/a;
+                cout<<"您输入的方程有两个复根，分别为x1="<<x1<<"+i*"<<x2<<"  x2="<<x1<<"-i*"<<x2<<endl;
+                continue;
+            }
+        }
+    }
+    return 0;
+}
