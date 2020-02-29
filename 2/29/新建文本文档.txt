@@ -1,0 +1,41 @@
+/*Author:Nicky_Yue
+ *date:2/29/2020
+ *function:a simple calculator only includes "+,-,*,/"
+ *e-mail:yuntianqinghe@qq.com
+ */
+#include<iostream>
+
+#include<cmath>
+
+using namespace std;
+
+int main()
+{
+    double x,y;//输入两个数字
+    char n;
+    while(1)
+    {
+        cin>>x>>n>>y;
+        if(n=='+')
+        {
+            cout<<x+y<<endl;
+        }
+        if(n=='-')
+        {
+            cout<<x-y<<endl;
+        }
+        if(n=='*')
+        {
+            cout<<x*y<<endl;
+        }
+        if(n=='/')
+        {
+            cout<<x/y<<endl;
+        }
+        if(n!='+'&&n!='-'&&n!='*'&&n!='/')
+        {
+            break;
+        }
+    }
+    return 0;
+}
